@@ -1,6 +1,19 @@
-#Nameplate Generator
-This is a digital nameplate generating  system purely written in Python3 using Flask framework
+# Nameplate Generator
+This is a digital nameplate generating system purely written on Python3 using Flask framework
+It's a look alike yet not idendical website that I developed for BMW R&D center Beijing,China during my internship back in 2019-2020.
 
+# Functionality
+The system lets user sign in and sign up then create, update, delete degital nameplate. 
+In nameplate user can select background and upload photo
+
+1. Flask login
+2. Flask signup
+3. SQL lite
+4. Flask Photo upload
+
+
+
+# How to run
 Command for running without virtual environment
 flask run
 
