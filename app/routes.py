@@ -50,7 +50,7 @@ class DeviceRegistrationForm(FlaskForm):
     name = StringField('Name', validators=[DataRequired()])
     dept_code = StringField('Dept. Code', validators=[DataRequired()])
     device_function = StringField('Function', validators=[DataRequired()])
-    device_bg=SelectField('Select Background', choices=[('bg3id', 'Default'), ('bg1id', 'Beijing'), ('bg2id', 'Shanghai'), ])
+    device_bg=SelectField('Select Background', choices=[('bg3id', 'Default'), ('bg1id', 'Day'), ('bg2id', 'Night'), ])
     # device_image = # HAVE TO LET USER UPLOAD IMAGE OF THE DEVICE
     photo = FileField(validators=[FileAllowed(photos, 'Image only!')])
     submit = SubmitField('Save')
@@ -65,7 +65,7 @@ class DeviceEditForm(FlaskForm):
     name = StringField('Name', validators=[DataRequired()])
     dept_code = StringField('Dept. Code', validators=[DataRequired()])
     device_function = StringField('Function', validators=[DataRequired()])
-    device_bg=SelectField('Select Background', choices=[('bg1id', 'Beijing'), ('bg2id', 'Shanghai'), ('bg3id', 'Default')])
+    device_bg=SelectField('Select Background', choices=[('bg1id', 'Day'), ('bg2id', 'Night'), ('bg3id', 'Default')])
     
     # device_image = # HAVE TO LET USER UPLOAD IMAGE OF THE DEVICE    
     submit = SubmitField('Update')
