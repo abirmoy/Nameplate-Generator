@@ -1,0 +1,26 @@
+<style>
+    body {            
+        background-color: rgba(76, 106, 167, 0.788) !important;            
+        color: white !important;
+    }
+</style>
+
+
+<body>
+        
+         <!-- % extends 'bootstrap/base.html' %} ONLY FOR ADDING BOOTSTRAP -->
+         
+    <div class="bgform" style="padding: 0px !important;">
+        {% extends "base.html" %}
+        {% import 'bootstrap/wtf.html' as wtf %}
+        <h1>Edit Namepalte</h1>
+        {% block app_content %}
+            <div class="row">
+                <div class="col-md-4">
+                    {{ wtf.quick_form(form) }}
+                </div>                
+            </div>
+        {% endblock %}
+    </div>
+    
+</body>

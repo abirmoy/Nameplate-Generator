@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+<h1>Edit Device</h1>
+{% block app_content %}
+    <div class="row">
+        <div class="col-md-4">
+            <!-- <span style="color: rgb(30, 73, 21);"><strong>Please Upload photo less than 1024*576pixel or 1mb</strong></span> -->
+            {{ wtf.quick_form(form) }}
+            
+            <div></div> <br>
+            <span style="color: rgb(80, 15, 15);">To delete old photo click update without adding new photo</span> 
+            <li><a href="{{ url_for('devices') }}"><strong>Go Back</strong></a> without any changes</li>
+        </div> 
+              
+    </div>
+{% endblock %}

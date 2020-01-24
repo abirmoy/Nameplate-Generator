@@ -1,0 +1,13 @@
+
+<style>body { background-image:url("{{ url_for('static', filename='deffault.jpg') }}")!important;}
+    
+</style>
+<body>
+    {% extends "base.html" %}
+
+    {% block content %}
+        {% for device in devices %}
+            {% include '_device.html' %}
+        {% endfor %}
+    {% endblock %}
+</body>

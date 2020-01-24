@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+{% block bg_pic%}
+<head>
+    
+    
+        {% if bg_pic=='bg1_bj.jpg' %}
+        <style>        
+            body {            
+                background-image:url("{{ url_for('static', filename=bg_pic) }}");            
+                background-repeat: no-repeat;
+                background-size: 100% auto;
+            }
+            .bgform {
+                height: auto;
+                width: 70%;
+                font-family: sans-serif;
+                background-color: rgb(255, 255, 255); /* Fallback color */
+                background-color: rgba(255, 255, 255, 0.582); /* Black w/opacity/see-through */
+                background-size: 100% auto;
+                color: rgb(5, 5, 5);
+                margin-top: 16%;
+                margin-left: 1.2%;            
+            }
+            .table{
+                margin-top: .5%;
+                margin-left: .5%;
+            }
+        </style>
+        {% else %}
+        <style>
+            body {
+                background-image:url("{{ url_for('static', filename=bg_pic) }}");            
+                background-repeat: no-repeat;
+                background-size: 100% auto;                
+            }
+
+            .bgform {
+                height: auto;
+                width: 70%;
+                font-family: sans-serif;
+                background-color: rgba(0, 0, 0, 0.5); /* Fallback color */
+                background-color: rgba(0, 0, 0, 0.39); /* Black w/opacity/see-through */
+                background-size: 100% auto;
+                color: rgb(255, 255, 255);
+                margin-top: 16%;
+                margin-left: 1.5%;
+            }
+            .table{
+                margin-top: .5%;
+                margin-left: .5%;
+            }
+        
+        </style>
+        {% endif %}
+        
+    <title>{{ deviceId.name }}</title>
+</head>
+<body>    
+    <div class="bgform">            
+        <table class="table table-hover">
+            
+                
+            <tr>
+                {% if deviceId.photo %}<!-- I profile photo is uploaded then this block will be shown 330*480px--> 
+                <td><img src="{{ url_for('static', filename='uploads/'+deviceId.photo) }}" style="width:200px;height:260px !important;margin-left: 0px;padding-top: 0px !important;"></td>
+                {% endif %}
+                <td>
+                    {% if current_user.is_anonymous %}
+                    <div> </div>
+                    {% else %}
+                    <div>
+                        <p style="font-size: 150%;">
+                            &emsp14;
+                            <a href="{{ url_for('devices') }}">View All Nameplates</a> &emsp13; &emsp13; &emsp14;&emsp13;
+                            <a href="{{ url_for('register_device') }}">Add Nameplate</a> &emsp13; &emsp13; &emsp14;&emsp13; &emsp13;                               
+                            <a href="{{ url_for('logout') }}">Logout</a>
+                        </p>
+                    </div>
+                    {% endif %}
+
+
+
+                        
+                    <!-- INFORMATION WILL BE SHOWN AT THE DEVICE AFTER PHOTO -->
+                    <p style="font-size: 300%;margin-left: 8.5px;"><strong>{{ deviceId.name }}</strong></p>
+                    <div style="font-size: 200%;margin-left: 8.5px;">{{ deviceId.dept_code }}</div>
+                    <p style="font-size: 150%;margin-left: 8.5px;">{{ deviceId.device_function }}</p> 
+                    <!-- <p style="font-size: 180%;">{{ deviceId.photo }}</p>  -->  <!-- for debug -->
+                    
+
+
+
+
+                    {% if current_user.is_anonymous %}
+                    <div> </div>
+                    {% else %}
+                    <div style="display: inline-flex;font-size: 150%;margin-left: 3px;">
+                        &emsp14;
+                        <div><a href="{{ '/edit_device/'+deviceId.deviceId }}">Edit</a></div>&emsp13; &emsp13; &emsp14;&emsp13; &emsp13; &emsp14;
+                        <div><a href="{{ '/edit_photo/'+deviceId.deviceId }}">Add/Remove photo</a></div>&emsp13; &emsp13; &emsp14;&emsp13; &emsp13; &emsp14;
+                        <div><a href="{{ '/delete_device/'+deviceId.deviceId }}">Delete Nameplate</a></div>                       
+                    </div>
+                    {% endif %}
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+{% endblock %}
+</html>
+
+
+
+

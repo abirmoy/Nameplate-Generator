@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+            body {
+                background-image:url("{{ url_for('static', filename='deffault.jpg') }}");      
+            }
+
+            .instruction{
+                height: auto;
+                width: 100%;
+                font-family: sans-serif;
+                background-color: rgba(255, 255, 255, 0.5); /* Fallback color */
+                background-color: rgba(255, 255, 255, 0.650); /* Black w/opacity/see-through */
+                background-size: 100% auto;
+                color: rgb(0, 0, 0);
+                
+            }
+            .instructionTitle{                
+                text-align: center;
+                font-family: sans-serif;
+                font-size: 40px;
+            }
+            .instructions{
+                text-align: left;                
+                font-size: 20px;
+            }
+            
+    </style>
+</head>
+
+        
+{% extends "base.html" %}
+
+{% block title %}
+    {% if title %} {{ title }}{% else %}Welcome to Nameplate Genarator{% endif %}
+{% endblock %}
+
+<body> 
+
+{% block content %}
+    
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-info" role="alert">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+        {% block app_content %}{% endblock %}
+    </div>
+    <div class="instruction">
+        <div class="instructionTitle">Instruction</div>
+        <div class="instructions">
+            <ul>
+                <li>Login is not required for adding nameplate</li>
+                <li>URL for any particular nameplate is ip/device/<strong>deviceID</strong></li>
+                <li>To edit, first login then go to the page of the nameplate and click Edit your nameplate</li>
+                <li>To delete, first login then go to the page of the device and click Delete your device</li>
+                <li>For User ID and password please Signup</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+ 
+</body>
+</html>
