@@ -29,7 +29,7 @@ Linux: $source name_of_venv/bin/activate
 Step 3: install pip dependencies from requirements.txt file
 
 Windows: $pip install -r requirements.txt 
-Linux: $pip3 install -r requirements.txt
+Linux: $pip install -r requirements.txt
 
 Step 4: runing flask $flask run
 
