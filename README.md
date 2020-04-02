@@ -1,6 +1,5 @@
 # Nameplate Generator
-This is a digital nameplate generating system written on Python3 using Flask framework
-It's a simplified draft copy a system that I developed for BMW R&D center Beijing,China during my internship back in 2019-2020.
+This is a digital namecard generating system written on Python3 using Flask framework
 
 # Functionality
 The system lets user sign in and sign up then create, update, delete degital nameplate. 
