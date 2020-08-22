@@ -18,8 +18,8 @@ $flask run<br>
 <br> 
 For virtual environment<br> 
 Step 1: Creating Virtual environment <br> 
-$Windows: python -m venv name_of_venv<br> 
-$Linux: python3 -m venv name_of_venv<br> 
+Windows: $python -m venv name_of_venv<br> 
+Linux: $python3 -m venv name_of_venv<br> 
 
 Step 2: Activate virtual environment <br> 
 Windows: $cd name_of_venv/Scripts activate or activate.bat <br> 
